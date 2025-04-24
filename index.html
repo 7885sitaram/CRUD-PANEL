@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrudPanel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  /* CSS will be added here */
+</style>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <form id="form">
+        <h1 class="title">CrudPanel</h1>
+
+        <!-- Personal Information -->
+
+<div class="form-section">
+    <h3><i class="fas fa-user"></i> Personal Information</h3>
+    <!-- ... existing personal info fields ... -->
+    <label for="full_name">Full Name:</label>
+    <input type="text" id="full_name" name="full_name" placeholder="Enter Full Name" required >
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+    
+    <label>Gender:</label>
+    <div class="gender">
+
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other" required>
+        <label for="other">Other</label>
+
+    </div>
+
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="+91 XXXXXXXXXX">
+  </div>
+  
+  <!-- Account Details -->
+  <div class="form-section" style="animation-delay: 0.1s">
+    <h3><i class="fas fa-lock"></i> Account Details</h3>
+    <!-- ... existing account fields ... -->
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter Username">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter Your Email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter Your Password">
+
+    <label for="role">User Role:</label>
+    <select id="role" name="role">
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+        <option value="Guest">Guest</option>
+    </select>
+  </div>
+  
+  <!-- Education Details -->
+  <div class="form-section" style="animation-delay: 0.2s">
+    <h3><i class="fas fa-graduation-cap"></i> Education Details</h3>
+    <!-- ... existing education fields ... -->
+
+    <label>Qualification:</label>
+
+    <div class="gender">
+        
+        <input type="radio" id="10th" name="qual" value="10th" required>
+        <label for="10th">10th</label>
+        <input type="radio" id="12th" name="qual" value="12th" required>
+        <label for="12th">12th</label>
+        <input type="radio" id="Bachelor" name="qual" value="Bachelor" required>
+        <label for="Bachelor">Bachelor</label>
+        <input type="radio" id="Master" name="qual" value="Master" required>
+        <label for="Master">Master</label>
+
+    </div>
+
+    <label for="college">University/College:</label>
+    <input type="text" id="college" name="college">
+
+    <label for="passing_year">Year of Passing:</label>
+    <input type="number" id="passing_year" placeholder="20XX" name="passing_year" min="1900" max="2099">
+  </div>
+  
+  <!-- Professional Info -->
+  <div class="form-section" style="animation-delay: 0.3s">
+    <h3><i class="fas fa-briefcase"></i> Professional Info</h3>
+    <!-- ... existing professional fields ... -->
+
+    <label for="job_title">Current Job Title:</label>
+    <input type="text" id="job_title" name="job_title">
+
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" name="company">
+
+    <label for="skills">Skills:</label>
+    <div class="gender">
+        <input type="checkbox" class="skill" value="HTML" id="HTML" ><label for="HTML">HTML</label>
+        <input type="checkbox" class="skill" value="CSS" id="CSS"><label for="CSS">CSS</label>
+        <input type="checkbox" class="skill" value="JS" id="JS"><label for="JS">JS</label>
+        <input type="checkbox" class="skill" value="React" id="React"><label for="React">React</label>
+
+    </div>
+  </div>
+  
+  <!-- File Upload -->
+  <div class="form-section" style="animation-delay: 0.4s">
+    <h3><i class="fas fa-file-upload"></i> File Upload</h3>
+    <!-- ... existing file upload fields ... -->
+
+    <label for="resume">Upload Images:</label>
+    <!-- <input type="file" multiple id="file" name="resume" accept=".pdf,.doc,.docx"> -->
+    <input type="file" multiple id="file" name="resume">
+    
+</div>
+
+<div class="submit">
+    <button id="btn" type="submit">Submit</button>
+</div>
+
+    </form>
+
+    <!-- Table -->
+
+    <table border="2" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Full Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Mobile</th>
+
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Role</th>
+
+                <th>Qualification</th>
+                <th>Collage Name</th>
+                <th>Passing Year</th>
+
+                <th>Job Title</th>
+                <th>Company Name</th>
+                <th>Skills</th>
+                <th>Images</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+    </table>
+
+    
+    <div class="Download">
+        <button id="downloadBtn" type="button">Download Data (JSON)</button>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
